@@ -26,6 +26,7 @@ public class SupermercadoView {
 	private DefaultTableModel modeloArticulo;
 	private DefaultTableModel modeloListaEmbolsados;
 
+
 	
 
 	 public SupermercadoView(SupermercadoController controlador) {
@@ -125,4 +126,20 @@ public void rellenaListaArticulos(Object[] rowArticulo) {
 		this.table.setModel(modeloArticulo); //una vez la tenga añadida al modelo, muestro el modelo en la tabla
 		
 	}
+
+public JTable getTableArticulosEmbolsar() {
+
+	return table;
+	}
+
+public Object getTableModeArticulosEmbolsar() {
+
+	return modeloArticulo;
 }
+
+public DefaultTableModel getTableModelEmbolsarArticulos() {
+
+	return modeloArticulo;
+}
+}
+
