@@ -27,6 +27,7 @@ public class SupermercadoView {
 	private DefaultTableModel modeloListaEmbolsados;
 
 
+
 	
 
 	 public SupermercadoView(SupermercadoController controlador) {
@@ -132,14 +133,16 @@ public JTable getTableArticulosEmbolsar() {
 	return table;
 	}
 
-public Object getTableModeArticulosEmbolsar() {
-
-	return modeloArticulo;
-}
 
 public DefaultTableModel getTableModelEmbolsarArticulos() {
 
 	return modeloArticulo;
 }
+
+public DefaultTableModel getTableModelEmbolsados() {
+
+	return modeloListaEmbolsados;
+	
+	}
 }
 

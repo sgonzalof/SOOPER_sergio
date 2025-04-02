@@ -67,16 +67,33 @@ public class SupermercadoController {
         // cogemos el id del articulo a cambiar en bd, cogemos los index de las filas seleccionadas en la jTAble
         // y llamamos al modelo de la tabla para borrar las filas    
 
-        int countRemoved = 0;
 
-        for (int selectedRowIndex : indexSeleccionados) {
-        	int removeIndex = selectedRowIndex - countRemoved;
-        	tableModelEmbolsarArticulos.removeRow(removeIndex);
-        	countRemoved++;
+    	Object[] fila = new Object[2];  
+    	
+        for (int selectedRowIndex : indexSeleccionados) {      	     	
         	
+
+        	              	
+      
+        	Object valorTablaEmbolsados = this.view.getTableModelEmbolsarArticulos().getValueAt(selectedRowIndex, 0);
+        	
+        	fila[0] = valorTablaEmbolsados;
+        	fila[1] = "999";
+        	// esta linea guarda el valor que queremos poner en la tabla embolsados
+        	this.view.getTableModelEmbolsados().addRow(fila); // añadimos fila null al modelo de la tabla embolsados
+        	this.view.getTableModelEmbolsados().setValueAt(valorTablaEmbolsados, selectedRowIndex, 0);
+        	this.view.getTableModelEmbolsados().setValueAt("999", selectedRowIndex, 1);
+
+        	
+        	
+        	this.view.getTableModelEmbolsarArticulos().removeRow(selectedRowIndex);
+     	
         	
         	// esto borra las filas seleccionadas de la tabla (table usando el modelo de tabla tableModelEmbolsarArticulos)
         	// con getIndexArticulo tenemos los indices de las filas que vamos a borrar de la tabla
+      
+
+
         }
 
 		
